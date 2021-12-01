@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="image_retrieval"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/shayu/OneDrive/作业们/1201\ -\ Image\ retrieval\ of\ wool\ fabric/image_retrieval/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/shayu/OneDrive/作业们/1201\ -\ Image\ retrieval\ of\ wool\ fabric/image_retrieval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/shayu/OneDrive/作业们/1201\ -\ Image\ retrieval\ of\ wool\ fabric/image_retrieval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/shayu/OneDrive/作业们/1201\ -\ Image\ retrieval\ of\ wool\ fabric/image_retrieval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/shayu/OneDrive/作业们/1201\ -\ Image\ retrieval\ of\ wool\ fabric/image_retrieval/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/shayu/OneDrive/作业们/1201\ -\ Image\ retrieval\ of\ wool\ fabric/image_retrieval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/shayu/OneDrive/作业们/1201\ -\ Image\ retrieval\ of\ wool\ fabric/image_retrieval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/shayu/OneDrive/作业们/1201\ -\ Image\ retrieval\ of\ wool\ fabric/image_retrieval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/shayu/OneDrive/作业们/1201\ -\ Image\ retrieval\ of\ wool\ fabric/image_retrieval/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/shayu/OneDrive/作业们/1201\ -\ Image\ retrieval\ of\ wool\ fabric/image_retrieval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/shayu/OneDrive/作业们/1201\ -\ Image\ retrieval\ of\ wool\ fabric/image_retrieval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/shayu/OneDrive/作业们/1201\ -\ Image\ retrieval\ of\ wool\ fabric/image_retrieval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="image_retrieval">
+				<Option output="/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/cmake-build-debug/image_retrieval" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/image_retrieval"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/shayu/OneDrive/作业们/1201\ -\ Image\ retrieval\ of\ wool\ fabric/image_retrieval/cmake-build-debug/Makefile&quot;  VERBOSE=1 image_retrieval"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/shayu/OneDrive/作业们/1201\ -\ Image\ retrieval\ of\ wool\ fabric/image_retrieval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/shayu/OneDrive/作业们/1201\ -\ Image\ retrieval\ of\ wool\ fabric/image_retrieval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/shayu/OneDrive/作业们/1201\ -\ Image\ retrieval\ of\ wool\ fabric/image_retrieval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="image_retrieval/fast">
+				<Option output="/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/cmake-build-debug/image_retrieval" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/image_retrieval"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/shayu/OneDrive/作业们/1201\ -\ Image\ retrieval\ of\ wool\ fabric/image_retrieval/cmake-build-debug/Makefile&quot;  VERBOSE=1 image_retrieval/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/shayu/OneDrive/作业们/1201\ -\ Image\ retrieval\ of\ wool\ fabric/image_retrieval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/shayu/OneDrive/作业们/1201\ -\ Image\ retrieval\ of\ wool\ fabric/image_retrieval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/shayu/OneDrive/作业们/1201\ -\ Image\ retrieval\ of\ wool\ fabric/image_retrieval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/image_retrieval/dft.cpp">
+			<Option target="image_retrieval"/>
+		</Unit>
+		<Unit filename="/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/image_retrieval/dft.h">
+			<Option target="image_retrieval"/>
+		</Unit>
+		<Unit filename="/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/image_retrieval/euclid.cpp">
+			<Option target="image_retrieval"/>
+		</Unit>
+		<Unit filename="/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/image_retrieval/euclid.h">
+			<Option target="image_retrieval"/>
+		</Unit>
+		<Unit filename="/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/image_retrieval/file.cpp">
+			<Option target="image_retrieval"/>
+		</Unit>
+		<Unit filename="/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/image_retrieval/file.h">
+			<Option target="image_retrieval"/>
+		</Unit>
+		<Unit filename="/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/image_retrieval/init.h">
+			<Option target="image_retrieval"/>
+		</Unit>
+		<Unit filename="/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/image_retrieval/lbp.cpp">
+			<Option target="image_retrieval"/>
+		</Unit>
+		<Unit filename="/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/image_retrieval/lbp.h">
+			<Option target="image_retrieval"/>
+		</Unit>
+		<Unit filename="/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/image_retrieval/lbp_git.cpp">
+			<Option target="image_retrieval"/>
+		</Unit>
+		<Unit filename="/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/image_retrieval/lbp_git.hpp">
+			<Option target="image_retrieval"/>
+		</Unit>
+		<Unit filename="/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/image_retrieval/main.cpp">
+			<Option target="image_retrieval"/>
+		</Unit>
+		<Unit filename="/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
