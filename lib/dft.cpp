@@ -1,4 +1,4 @@
-#include "dft.h"
+#include "../include/dft.h"
 void DFT(Mat& I) {
     int m = getOptimalDFTSize(I.rows);
     int n = getOptimalDFTSize(I.cols);
@@ -58,7 +58,7 @@ void sdof(Mat& I, vector<float>& da, size_t& rings) {
             float pixel = p[j];
             //cout << pixel <<" ";
             for (k = 0; k <= rings; k++) {
-                //float pixel = 10 * (p[j] / 10); // ÕâÖÖ·½·¨¿ÉÒÔ¼Ó¿ìËã·¨£¬µ«¾«¶È»áÏÂ½µ
+                //float pixel = 10 * (p[j] / 10); // ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼Ó¿ï¿½ï¿½ã·¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½Â½ï¿½
                 if (r > (k * step * k * step) && r < (k + 1) * step * (k + 1) * step) {
                     vector<float>::iterator it = find(m[k].data.begin(), m[k].data.end(), pixel);
                     if (it == m[k].data.end()) {

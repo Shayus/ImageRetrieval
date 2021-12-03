@@ -4,10 +4,10 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 #include <iostream>
-#include <math.h>
+#include <cmath>
 #include <vector>
 #include <algorithm>
-#include <string.h>
+#include <cstring>
 using namespace std;
 using namespace cv;
 struct info {

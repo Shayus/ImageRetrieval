@@ -1,5 +1,5 @@
-#include "init.h"
-#include "file.h"
+#pragma once
+#include "../include/file.h"
 void save_new_feature(String& path,int& type,vector<float>& f) {
     fstream outfile;
     bool flag = true;
@@ -54,11 +54,11 @@ void read_feature(int& type, vector<vector<string>>& f) {
         String lineStr;
         while (getline(infile, lineStr))
         {
-            // ´æ³É¶þÎ¬±í½á¹¹
+            // ï¿½ï¿½É¶ï¿½Î¬ï¿½ï¿½á¹¹
             stringstream ss(lineStr);
             string str;
             vector<string> lineArray;
-            // °´ÕÕ¶ººÅ·Ö¸ô
+            // ï¿½ï¿½ï¿½Õ¶ï¿½ï¿½Å·Ö¸ï¿½
             while (getline(ss, str, ','))
                 lineArray.push_back(str);
             f.push_back(lineArray);

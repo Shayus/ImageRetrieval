@@ -1,4 +1,4 @@
-#include "euclid.h"
+#include "../include/euclid.h"
 void euclid(vector<float>& d1, vector<vector<string>>& d2, vector<float>& l1, vector<vector<string>>& l2, string& dis) {
 	int k1 = 0, k2 = 0;
 	vector<float> sum1, sum2;

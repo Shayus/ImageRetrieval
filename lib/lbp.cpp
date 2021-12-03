@@ -1,6 +1,5 @@
 #pragma once
-#include "init.h"
-#include "lbp.h"
+#include "../include/lbp.h"
 //const int revolve_map[] = { 0,1,3,5,7,9,11,13,15,17,19,21,23,24,27,29,31,37,39,43,45,47,51,53,55,59,61,63,85,87,91,95,111,119,127,255 };
 //const int uniform_map[] = {0,1,2,3,4,6,7,8,12,14,15,16,24,28,30,31,32,48,56,60,62,63,64,96,112,120,124,126,127,128,129,131,135,143,159,191,192,193,195,199,207,223,224,225,227,231,239,240,241,243,247,248,249,251,252,253,254,255 };
 void point_search(int i, int j, int t) {
@@ -57,48 +56,48 @@ void basic_lbp(Mat& I, vector<float>& data) {
         int realValue = saturate_cast<int>(binValue * hpt / maxValue);
         rectangle(dstImage, Point(i * scale, size - 1), Point((i + 1) * scale - 1, size - realValue), Scalar(255));
     }
-    imshow("Ò»Î¬Ö±·½Í¼", dstImage);
+    imshow("Ò»Î¬Ö±ï¿½ï¿½Í¼", dstImage);
     */
 }
 
-//Ðý×ª²»±äÔ²ÐÎLBPÌØÕ÷¼ÆËã
+//ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½LBPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½awWWWWWWWWWWWWWWWW
 void getRotationInvariantLBPFeature(Mat &src, int radius, int neighbors)
 {
 	for (int k = 0; k < neighbors; k++)
 	{
-		//¼ÆËã²ÉÑùµã¶ÔÓÚÖÐÐÄµã×ø±êµÄÆ«ÒÆÁ¿rx£¬ry
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½ï¿½ï¿½rxï¿½ï¿½ry
 		float rx = static_cast<float>(radius * cos(2.0 * CV_PI * k / neighbors));
 		float ry = -static_cast<float>(radius * sin(2.0 * CV_PI * k / neighbors));
-		//ÎªË«ÏßÐÔ²åÖµ×ö×¼±¸
-		//¶Ô²ÉÑùµãÆ«ÒÆÁ¿·Ö±ð½øÐÐÉÏÏÂÈ¡Õû
+		//ÎªË«ï¿½ï¿½ï¿½Ô²ï¿½Öµï¿½ï¿½×¼ï¿½ï¿½
+		//ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½
 		int x1 = static_cast<int>(floor(rx));
 		int x2 = static_cast<int>(ceil(rx));
 		int y1 = static_cast<int>(floor(ry));
 		int y2 = static_cast<int>(ceil(ry));
-		//½«×ø±êÆ«ÒÆÁ¿Ó³Éäµ½0-1Ö®¼ä
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½ï¿½ï¿½Ó³ï¿½äµ½0-1Ö®ï¿½ï¿½
 		float tx = rx - x1;
 		float ty = ry - y1;
-		//¸ù¾Ý0-1Ö®¼äµÄx£¬yµÄÈ¨ÖØ¼ÆËã¹«Ê½¼ÆËãÈ¨ÖØ£¬È¨ÖØÓë×ø±ê¾ßÌåÎ»ÖÃÎÞ¹Ø£¬Óë×ø±ê¼äµÄ²îÖµÓÐ¹Ø
+		//ï¿½ï¿½ï¿½ï¿½0-1Ö®ï¿½ï¿½ï¿½xï¿½ï¿½yï¿½ï¿½È¨ï¿½Ø¼ï¿½ï¿½ã¹«Ê½ï¿½ï¿½ï¿½ï¿½È¨ï¿½Ø£ï¿½È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½Þ¹Ø£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½Öµï¿½Ð¹ï¿½
 		float w1 = (1 - tx) * (1 - ty);
 		float w2 = tx * (1 - ty);
 		float w3 = (1 - tx) * ty;
 		float w4 = tx * ty;
-		//Ñ­»·´¦ÀíÃ¿¸öÏñËØ
+		//Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		for (int i = radius; i < src.rows - radius; i++)
 		{
 			for (int j = radius; j < src.cols - radius; j++)
 			{
-				//»ñµÃÖÐÐÄÏñËØµãµÄ»Ò¶ÈÖµ
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½Ä»Ò¶ï¿½Öµ
 				uchar center = src.at<uchar>(i, j);
-				//¸ù¾ÝË«ÏßÐÔ²åÖµ¹«Ê½¼ÆËãµÚk¸ö²ÉÑùµãµÄ»Ò¶ÈÖµ
+				//ï¿½ï¿½ï¿½ï¿½Ë«ï¿½ï¿½ï¿½Ô²ï¿½Öµï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½kï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»Ò¶ï¿½Öµ
 				float neighbor = src.at<uchar>(i + x1, j + y1) * w1 + src.at<uchar>(i + x1, j + y2) * w2 \
 					+ src.at<uchar>(i + x2, j + y1) * w3 + src.at<uchar>(i + x2, j + y2) * w4;
-				//LBPÌØÕ÷Í¼ÏñµÄÃ¿¸öÁÚ¾ÓµÄLBPÖµÀÛ¼Ó£¬ÀÛ¼ÓÍ¨¹ýÓë²Ù×÷Íê³É£¬¶ÔÓ¦µÄLBPÖµÍ¨¹ýÒÆÎ»È¡µÃ
-				src.at<uchar>(i - radius, j - radius) |= (neighbor > center) << (neighbors - k - 1);//dstÄ¬ÈÏÎªCV_8UC1,Òò´ËÖ»Ö§³Ö8¸ö²ÉÑùµã
+				//LBPï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½Ú¾Óµï¿½LBPÖµï¿½Û¼Ó£ï¿½ï¿½Û¼ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É£ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½LBPÖµÍ¨ï¿½ï¿½ï¿½ï¿½Î»È¡ï¿½ï¿½
+				src.at<uchar>(i - radius, j - radius) |= (neighbor > center) << (neighbors - k - 1);//dstÄ¬ï¿½ï¿½ÎªCV_8UC1,ï¿½ï¿½ï¿½Ö»Ö§ï¿½ï¿½8ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			}
 		}
 	}
-	//½øÐÐÐý×ª²»±ä´¦Àí
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ä´¦ï¿½ï¿½
 	for (int i = 0; i < src.rows; i++)
 	{
 		for (int j = 0; j < src.cols; j++)
@@ -107,7 +106,7 @@ void getRotationInvariantLBPFeature(Mat &src, int radius, int neighbors)
 			unsigned char minValue = currentValue;
 			for (int k = 1; k < neighbors; k++)
 			{
-				//Ñ­»·×óÒÆ
+				//Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				unsigned char temp = (currentValue >> (neighbors - k)) | (currentValue << k);
 				if (temp < minValue)
 				{

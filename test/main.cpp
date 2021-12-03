@@ -1,17 +1,17 @@
-#include "dft.h"
-#include "lbp.h"
-#include "file.h"
-#include "euclid.h"
-#include "lbp_git.hpp"
+#include "../include/dft.h"
+#include "../include/lbp.h"
+#include "../include/file.h"
+#include "../include/euclid.h"
 #define dtf 0
 #define lbp_1 1
 #define lbp_2 2
 #define lbp_3 3
 /*
-    �������룺
+    Command Arguments
     0 | exe
-    1 | type ���ͼƬ - 0/����ͼƬ -1
-    2 | path ͼƬ·��
+    1 | type 0 - Add images
+             1 - Search Image
+    2 | path image path
 */
 int main(int argc, char *argv[]){
     if (argc < 3){
@@ -21,7 +21,7 @@ int main(int argc, char *argv[]){
     String path(argv[2]);
     Mat I = imread(path, IMREAD_GRAYSCALE);
     if (I.empty()) {
-        cerr << "Can't find the iamge, Please input the correct path of the image!" << endl;
+        cerr << "Can't find the image, Please input the correct path of the image!" << endl;
         return 0;
     }
     switch (atoi(argv[1]))

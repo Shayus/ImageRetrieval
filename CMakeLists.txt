@@ -1,20 +1,24 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.12)
 project(image_retrieval)
+set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -std=c++17")
 
-set(CMAKE_CXX_STANDARD 14)
+# Where to find CMake modules and OpenCV
+set(OpenCV_DIR "C:lib\\opencv\\mingw-build\\install")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+message(STATUS "opencv Include:${OpenCV_INCLUDE_DIRS}")
+message(STATUS "opencv Library:${OpenCV_LIBRARIES}")
+# Configure Project
+file(GLOB SOURCES
+        include/*.h
+        lib/*.cpp
+        )
+#set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "C:/Users/15988/OneDrive/works/1201 - Image retrieval of wool fabric/image_retrieval/build/debug")
+add_executable(app test/main.cpp ${SOURCES})
+#target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBRARIES})
 
-include_directories(image_retrieval)
-
-add_executable(image_retrieval
-        image_retrieval/dft.cpp
-        image_retrieval/dft.h
-        image_retrieval/euclid.cpp
-        image_retrieval/euclid.h
-        image_retrieval/file.cpp
-        image_retrieval/file.h
-        image_retrieval/init.h
-        image_retrieval/lbp.cpp
-        image_retrieval/lbp.h
-        image_retrieval/lbp_git.cpp
-        image_retrieval/lbp_git.hpp
-        image_retrieval/main.cpp)
+# add libs you need
+set(OpenCV_LIBS opencv_core opencv_imgproc opencv_highgui opencv_imgcodecs)
+# linking
+target_link_libraries(app ${OpenCV_LIBS})
