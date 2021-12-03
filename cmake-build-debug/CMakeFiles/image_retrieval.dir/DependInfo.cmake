@@ -8,18 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/image_retrieval/dft.cpp" "/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/cmake-build-debug/CMakeFiles/image_retrieval.dir/image_retrieval/dft.cpp.o"
-  "/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/image_retrieval/euclid.cpp" "/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/cmake-build-debug/CMakeFiles/image_retrieval.dir/image_retrieval/euclid.cpp.o"
-  "/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/image_retrieval/file.cpp" "/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/cmake-build-debug/CMakeFiles/image_retrieval.dir/image_retrieval/file.cpp.o"
-  "/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/image_retrieval/lbp.cpp" "/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/cmake-build-debug/CMakeFiles/image_retrieval.dir/image_retrieval/lbp.cpp.o"
-  "/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/image_retrieval/lbp_git.cpp" "/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/cmake-build-debug/CMakeFiles/image_retrieval.dir/image_retrieval/lbp_git.cpp.o"
-  "/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/image_retrieval/main.cpp" "/Users/shayu/OneDrive/作业们/1201 - Image retrieval of wool fabric/image_retrieval/cmake-build-debug/CMakeFiles/image_retrieval.dir/image_retrieval/main.cpp.o"
+  "C:/Users/15988/OneDrive/works/1201 - Image retrieval of wool fabric/image_retrieval/lib/main.cpp" "C:/Users/15988/OneDrive/works/1201 - Image retrieval of wool fabric/image_retrieval/cmake-build-debug/CMakeFiles/image_retrieval.dir/lib/main.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../image_retrieval"
+  "../include"
   )
 
 # The set of dependency files which are needed:
