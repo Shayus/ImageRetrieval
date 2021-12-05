@@ -1,3 +1,0 @@
-C:/Users/15988/OneDrive/works/1201 - Image retrieval of wool fabric/image_retrieval/cmake-build-debug/CMakeFiles/app.dir
-C:/Users/15988/OneDrive/works/1201 - Image retrieval of wool fabric/image_retrieval/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/15988/OneDrive/works/1201 - Image retrieval of wool fabric/image_retrieval/cmake-build-debug/CMakeFiles/rebuild_cache.dir

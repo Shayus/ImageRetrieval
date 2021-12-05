@@ -36,14 +36,13 @@ int main(int argc, char *argv[]){
             vector<float> f;
             sdof(I, f, rings);
             //for (auto i : f) cout << i << endl;
-            //vector<float> data(256);
-            //basic_lbp(J, data);
+            vector<float> data;
+            rotate_lbp(J, data);
             //for (auto i : data) cout << i << endl;
-            getRotationInvariantLBPFeature(J, 1, 8);
-            imshow("elbp", J);
+            //imshow("elbp", J);
             int a = 0, b = 1;
-            //save_new_feature(path, a, f);
-            //save_new_feature(path, b, data);
+            save_new_feature(path, a, f);
+            save_new_feature(path, b, data);
         }
         break;
     }

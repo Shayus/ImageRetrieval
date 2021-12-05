@@ -3,12 +3,15 @@ project(image_retrieval)
 set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -std=c++17")
 
 # Where to find CMake modules and OpenCV
+# Windows
 set(OpenCV_DIR "C:lib\\opencv\\mingw-build\\install")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 message(STATUS "opencv Include:${OpenCV_INCLUDE_DIRS}")
 message(STATUS "opencv Library:${OpenCV_LIBRARIES}")
+
+
 # Configure Project
 file(GLOB SOURCES
         include/*.h

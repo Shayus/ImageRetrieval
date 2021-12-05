@@ -6,16 +6,16 @@ void save_new_feature(String& path,int& type,vector<float>& f) {
     switch (type)
     {
     case 0:
-        outfile.open("info/dft_22.csv", ios::app);
+        outfile.open("../src/dft_22.csv", ios::app);
         break;
     case 1:
-        outfile.open("info/lbp_basic.csv", ios::app);
+        outfile.open("../src/lbp_basic.csv", ios::app);
         break;
     case 2:
-        outfile.open("info/lbp_round.csv", ios::app);
+        outfile.open("../src/lbp_round.csv", ios::app);
         break;
     case 3:
-        outfile.open("info/lbp_unit.csv", ios::app);
+        outfile.open("../src/lbp_unit.csv", ios::app);
         break;
     default:
         flag = false;
@@ -33,16 +33,16 @@ void read_feature(int& type, vector<vector<string>>& f) {
     switch (type)
     {
     case 0:
-        infile.open("info/dft_22.csv");
+        infile.open("../src/dft_22.csv");
         break;
     case 1:
-        infile.open("info/lbp_basic.csv");
+        infile.open("../src/lbp_basic.csv");
         break;
     case 2:
-        infile.open("info/lbp_round.csv");
+        infile.open("../src/lbp_round.csv");
         break;
     case 3:
-        infile.open("info/lbp_unit.csv");
+        infile.open("../src/lbp_unit.csv");
         break;
     default:
         flag = false;
