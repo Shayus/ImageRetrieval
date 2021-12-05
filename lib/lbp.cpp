@@ -58,10 +58,8 @@ void get_neighbors(Mat& I, int& i, int& j, vector<int>& a){
 }
 
 void rotate_lbp(Mat& I, vector<float>& data) {
-    Mat II = I.clone();
-    // calculate result
-    vector<float> res;
     int k;
+    vector<float> res;
     for(int m = 2; m < I.rows-2; m++) {
         for(int n = 2; n < I.cols-2; n++) {
             vector<int> a;
@@ -77,5 +75,21 @@ void rotate_lbp(Mat& I, vector<float>& data) {
             res.push_back(float(*min_element(temp.begin(),temp.end())));
         }
     }
-    data = res;
+    cout << *max_element(res.begin(), res.end());
+    info d;
+    for(auto i : res) {
+        bool flag = true;
+        int k=0;
+        for(auto j : d.data){
+            if(i == j) {
+                flag = false;
+                d.n[k] ++;
+            }
+            k++;
+        }
+        if(flag){
+            d.data.push_back(i);
+            d.n.push_back(1);
+        }
+    }
 }

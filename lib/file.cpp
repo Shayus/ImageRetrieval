@@ -1,4 +1,3 @@
-#pragma once
 #include "../include/file.h"
 void save_new_feature(String& path,int& type,vector<float>& f) {
     fstream outfile;
