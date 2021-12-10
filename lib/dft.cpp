@@ -43,24 +43,24 @@ void sdof(Mat& I, vector<float>& da, size_t& rings) {
     //imshow("test", I);
     int a = I.rows <= I.cols ? I.rows : I.cols;
     //cout << a;
-    float step = a / rings / 2;
-    int a2 = a / 2;
+    float step = float(a) / float(rings) / 2;
+    float a2 = float(a) / 2;
     vector<info> m;
     info Info;
     for (int i = 0; i <= rings; i++) m.push_back(Info);
     int i, j;
     for (i = 0; i < a; ++i) {
-        float* p = II.ptr<float>(i);
+        auto* p = II.ptr<float>(i);
         for (j = 0; j < a; ++j) {
             int k;
-            int r = (i - a2) * (i - a2) + (j - a2) * (j - a2);
-            //int r = i * i + j * j;
+            auto ii = float(i);
+            auto jj = float(j);
+            float r = (ii - a2) * (ii - a2) + (jj - a2) * (jj - a2);
             float pixel = p[j];
-            //cout << pixel <<" ";
             for (k = 0; k <= rings; k++) {
-                //float pixel = 10 * (p[j] / 10); // ���ַ������Լӿ��㷨�������Ȼ��½�
-                if (r > (k * step * k * step) && r < (k + 1) * step * (k + 1) * step) {
-                    vector<float>::iterator it = find(m[k].data.begin(), m[k].data.end(), pixel);
+                //float pixel = 10 * (p[j] / 10); // make the process quicker but less accuracy
+                if (r > (float(k*k) * step * step) && r < float((k + 1)*(k + 1)) * step *  step) {
+                    auto it = find(m[k].data.begin(), m[k].data.end(), pixel);
                     if (it == m[k].data.end()) {
                         m[k].data.push_back(pixel);
                         m[k].n.push_back(1);
@@ -74,20 +74,34 @@ void sdof(Mat& I, vector<float>& da, size_t& rings) {
         }
     }
 
-    //imshow("rings", II);
     i = 0;
-    for (auto it : m) {
-        float a = 0, b = 0;
+    for (const auto& it : m) {
+        float sum_a = 0, sum_b = 0;
         int k = 0;
-        int dk = 0;
+        float dk = 0;
         for (auto itt : it.data) {
-            a += m[i].n[k] * itt;
-            b += m[i].n[k] * itt * itt;
-            dk += m[i].n[k];
+            auto tmp = float(m[i].n[k]);
+            sum_a += tmp * itt;
+            sum_b += tmp * itt * itt;
+            dk += tmp;
             k++;
         }
-        da.push_back(sqrt((dk * b - a * a) / ((dk - 1) * dk)));
-        //cout << i << " ring: " << da[i] << "with dk:" << dk <<endl;
+        da.push_back(sqrt((dk * sum_b - sum_a * sum_a) / ((dk - 1) * dk)));
         i++;
+    }
+}
+
+void process_dft(Mat& I, vector<float>& da, size_t& rings){
+    rings = rings-1;
+    DFT(I);
+    sdof(I,da,rings);
+
+    auto biggest = std::max_element(std::begin(da), std::end(da));
+    auto smallest = std::min_element(std::begin(da), std::end(da));
+    //std::cout << "Max element is " << *biggest<< " at position " <<std::distance(std::begin(v), biggest) << std::endl;
+    // std::cout << "min element is " << *smallest<< " at position " <<std::distance(std::begin(v), smallest) << std::endl;
+    float fm = *biggest - *smallest;
+    for(int i=0; i<=rings;i++){
+        da[i] = (da[i]-*smallest) / fm;
     }
 }

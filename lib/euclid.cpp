@@ -7,26 +7,27 @@ void euclid(vector<float>& d1, vector<vector<string>>& d2, vector<float>& l1, ve
 		float sum = 0;
 		for (auto i : d) {
 			if (k1 != 0){
-				float m = stringToNum<float>(i);
-				float n = d1[k1 - 1];
-				sum += m * m + n * n;
+				float m = stringToNum<float>(i) - d1[k1-1];
+				sum += m * m;
 			}
 			k1++;
 		}
-		sum1.push_back(sqrt(sum));
+		sum1.push_back(sqrt(sum/float(k1)));
 	}
 	for (auto l : l2) {
 		k2 = 0;
 		float sum = 0;
 		for (auto i : l) {
 			if (k2 != 0) {
-				float m = stringToNum<float>(i);
-				float n = l1[k2 - 1];
-				sum += m * m + n * n;
+				float m = stringToNum<float>(i) - l1[k2 - 1];
+				sum += m * m;
 			}
 			k2++;
-		}
-		sum2.push_back(sqrt(sum));
+		}if(k2==0){
+            sum2.push_back(0);
+        }else{
+            sum2.push_back(sqrt(sum/float(k2)));
+        }
 	}
 	int k = 0;
 	vector<float> ed;
