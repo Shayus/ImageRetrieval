@@ -1,6 +1,7 @@
 #include "../include/init.h"
 Mat read_image(string path) {
     Mat I = imread(path, IMREAD_COLOR);
+    //imshow("origin", I);
     if (I.empty()) {
         cerr << "Can't find the image, Please input the correct path of the image!" << endl;
         exit(1);
@@ -15,7 +16,7 @@ Mat read_image(string path) {
         Rect area(0, (ro - co) / 2, i_size, i_size);
         N = I(area);
     }
-    resize(N, N, Size(256, 256));
+    resize(N, N, Size(512, 512));
     //imshow(path, N);
     return N;
 }
@@ -34,5 +35,6 @@ Mat pre_process(string path){
     Mat dst;
     cvtColor(I,I,COLOR_HSV2BGR);
     cvtColor(I,dst,COLOR_BGR2GRAY);
+    //imshow("pre-process", dst);
     return dst;
 }

@@ -12,7 +12,8 @@ void euclid(vector<float>& d1, vector<vector<string>>& d2, vector<float>& l1, ve
 			}
 			k1++;
 		}
-		sum1.push_back(sqrt(sum/float(k1)));
+        if(k1==0) sum1.push_back(0);
+        else sum1.push_back(sqrt(sum/float(k1)));
 	}
 	for (auto l : l2) {
 		k2 = 0;
@@ -31,8 +32,16 @@ void euclid(vector<float>& d1, vector<vector<string>>& d2, vector<float>& l1, ve
 	}
 	int k = 0;
 	vector<float> ed;
-	for (auto i : sum1) {
+    /*
+    // TODO： 测试一下仅傅里叶或者仅lbp时的算法准确度
+    for (auto i : sum2) {
+        ed.push_back(i);
+        cout << i << endl;
+        k++;
+    }*/
+    for (auto i : sum1) {
 		ed.push_back(i * sum2[k]);
+        cout << i*sum2[k] << endl;
 		k++;
 	}
 

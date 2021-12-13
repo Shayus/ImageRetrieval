@@ -36,7 +36,7 @@ void DFT(Mat& I) {
     I = magnitudeImage;
 }
 // standard deviations of frequencies
-void sdof(Mat& I, vector<float>& da, size_t& rings) {
+void sdof(Mat& I, vector<float>& da, int& rings) {
     Mat II = I.clone();
     //normalize(II, II, 0, 1, NORM_MINMAX);
     //cout << "before f   " << II.rows << " " << II.cols << endl;
@@ -91,17 +91,18 @@ void sdof(Mat& I, vector<float>& da, size_t& rings) {
     }
 }
 
-void process_dft(Mat& I, vector<float>& da, size_t& rings){
+void process_dft(Mat& I, vector<float>& da, int& rings){
     rings = rings-1;
+    vector<float> data;
     DFT(I);
-    sdof(I,da,rings);
-
-    auto biggest = std::max_element(std::begin(da), std::end(da));
-    auto smallest = std::min_element(std::begin(da), std::end(da));
-    //std::cout << "Max element is " << *biggest<< " at position " <<std::distance(std::begin(v), biggest) << std::endl;
-    // std::cout << "min element is " << *smallest<< " at position " <<std::distance(std::begin(v), smallest) << std::endl;
+    sdof(I,data,rings);
+    auto biggest = std::max_element(std::begin(data), std::end(data));
+    auto smallest = std::min_element(std::begin(data), std::end(data));
     float fm = *biggest - *smallest;
-    for(int i=0; i<=rings;i++){
-        da[i] = (da[i]-*smallest) / fm;
+    int k=0;
+    for(auto i:data) {
+        float tmp = i - *smallest;
+        da.push_back(tmp/fm);
+        k++;
     }
 }
